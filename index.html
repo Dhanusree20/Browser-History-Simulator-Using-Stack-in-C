@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrowseBack — Browser History Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="BrowseBack home"><span class="brand-icon">↶</span> BrowseBack</a>
+    <span class="tagline">A simple stack-based browser history demo</span>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow">DATA STRUCTURES PROJECT · C + STACK</p>
+      <h1>Your browsing journey,<br><span>one page at a time.</span></h1>
+      <p class="intro-copy">Explore how a browser can use a stack to remember pages and move back through your visit history.</p>
+      <div class="mini-stats">
+        <div><strong id="visitedCount">1</strong><span>Pages visited</span></div>
+        <div><strong id="historyCount">1</strong><span>In history stack</span></div>
+      </div>
+    </section>
+
+    <section class="browser-card" aria-label="Browser history simulator">
+      <div class="window-bar">
+        <div class="window-dots"><i></i><i></i><i></i></div>
+        <span class="window-label">BROWSER SIMULATOR</span>
+        <span class="window-menu">•••</span>
+      </div>
+      <div class="toolbar">
+        <button id="backBtn" class="tool-btn" title="Go back" aria-label="Go back">←</button>
+        <button id="forwardBtn" class="tool-btn" title="Go forward" aria-label="Go forward">→</button>
+        <button id="refreshBtn" class="tool-btn" title="Refresh current page" aria-label="Refresh">⟳</button>
+        <form id="addressForm" class="address-form">
+          <span class="lock">⌑</span>
+          <input id="urlInput" type="text" placeholder="Enter a website, e.g. example.com" autocomplete="off" aria-label="Website address">
+          <button type="submit" class="go-btn">Go</button>
+        </form>
+      </div>
+
+      <div class="page-area">
+        <div class="page-badge"><span class="live-dot"></span> CURRENT PAGE</div>
+        <div id="pageIcon" class="page-icon">⌂</div>
+        <p id="pageDomain" class="domain">welcome.local</p>
+        <h2 id="pageTitle">Welcome to BrowseBack</h2>
+        <p id="pageDescription">Type a website above or choose a quick link below to start building your browsing history.</p>
+        <div class="quick-links">
+          <button data-url="google.com"><span class="quick-icon google">G</span><span>Google</span></button>
+          <button data-url="wikipedia.org"><span class="quick-icon wiki">W</span><span>Wikipedia</span></button>
+          <button data-url="github.com"><span class="quick-icon github">⌘</span><span>GitHub</span></button>
+          <button data-url="youtube.com"><span class="quick-icon youtube">▶</span><span>YouTube</span></button>
+        </div>
+        <p class="demo-note">This is a local simulation. It does not open real websites.</p>
+      </div>
+    </section>
+
+    <aside class="history-card">
+      <div class="section-heading">
+        <div><p class="eyebrow">STACK VIEW</p><h2>History stack</h2></div>
+        <button id="clearBtn" class="clear-btn">Clear</button>
+      </div>
+      <p class="section-copy">The current page is at the top. Press Back to pop it and return to the previous page.</p>
+      <div id="stackList" class="stack-list" aria-live="polite"></div>
+      <div id="emptyState" class="empty-state" hidden>
+        <div class="empty-symbol">↶</div>
+        <strong>No history yet</strong>
+        <p>Visit a page to see it appear here.</p>
+      </div>
+      <div class="stack-footer"><span class="stack-dot"></span><span id="stackStatus">Stack is ready</span></div>
+    </aside>
+
+    <section class="how-card">
+      <div class="how-title"><span class="bulb">✦</span><div><p class="eyebrow">THE DSA CONCEPT</p><h2>Why a stack?</h2></div></div>
+      <div class="concept-grid">
+        <div><span class="concept-number">01</span><h3>Visit a page</h3><p>Push the new page onto the stack.</p></div>
+        <div><span class="concept-number">02</span><h3>Click Back</h3><p>Pop the current page and return to the previous one.</p></div>
+        <div><span class="concept-number">03</span><h3>Last in, first out</h3><p>The latest page is the first one removed (LIFO).</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>BrowseBack</span><span>Beginner DSA project · Implemented with C, HTML, CSS & JavaScript</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
